@@ -1,0 +1,25 @@
+
+/// Regular font family
+/// @type List
+$font-family: 'Manrope', sans-serif !default;
+
+
+
+
+/// Copy text color
+/// @type Color
+$text-color: rgba(101, 101, 101, 1)!default;
+$black: rgba(0, 0, 0, 1)!default;
+
+
+/// Main brand color
+/// @type Color
+$brand-color: rgba(238, 124, 14, 1) !default;
+
+
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 71.25rem !default;
+$padding: 0rem 2.5rem 0rem 2.5rem;

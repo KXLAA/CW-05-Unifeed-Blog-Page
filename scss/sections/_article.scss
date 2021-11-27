@@ -1,0 +1,35 @@
+.article{
+    @include flex-center-horiz;
+    padding-bottom: 6.5rem;
+    
+
+    @include respond-to(medium) {
+        flex-direction: column;
+        padding-bottom: 0rem;
+    }
+
+    &__container{
+        margin-right: 2rem;
+
+        @include respond-to(medium) {
+            margin-right: 0rem;
+        }
+    }
+
+    &__container:last-child{
+        margin-right: 0rem;
+    }
+
+    &__img{
+        margin-bottom: 1.5rem;  
+    }
+
+    &__heading{
+        @include heading(sub-heading);
+        margin-bottom: 1.5rem;
+    }
+
+    &__description{
+        margin-bottom: 1.5rem;
+    }
+}

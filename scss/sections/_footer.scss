@@ -1,0 +1,17 @@
+.footer{
+    @include flex-center-vert;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+
+    @include respond-to(small) {
+        flex-wrap: wrap;
+    }
+
+    &__item{
+        @include respond-to(x-small) {
+            margin-top: .5rem;
+        }
+        
+    }
+
+}

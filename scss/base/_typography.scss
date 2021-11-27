@@ -1,0 +1,65 @@
+
+@mixin heading-base{
+    font-family: $font-family;
+    font-weight: 700;
+    color: $black;
+}
+
+
+@mixin heading($style) {
+    @if $style == "main-heading" {
+        @include heading-base;
+        font-size: 2.25rem;
+        line-height: 2.875rem;
+    }
+
+    @else if $style == "sub-heading" {
+        @include heading-base;
+        font-size: 2.25rem;
+        line-height: 2.875rem;
+    }
+
+}
+
+// USAGE
+// @include heading(main-heading)
+// @include heading(sub-heading)
+// @include heading(footer-heading)
+
+
+
+
+@mixin body-base($weight:500, $color:$text-color, $font-size: 1.125rem,$line-height: 2rem ){
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $weight;
+    line-height: $line-height;
+    color: $color
+}
+
+
+@mixin body($style) {
+    @if $style == "main-body" {
+        @include body-base;
+    }
+
+    @else if $style == "author__name--txt" {
+        @include body-base(700, rgba(0, 0, 0, 1), 16px, 1rem);
+    }
+
+    @else if $style == "author__role--txt" {
+        @include body-base(600, $text-color, 16px);
+    }
+
+}
+
+// USAGE
+// @include body(main-body)
+// @include body(author__name--txt)
+// @include body(author__role--txt)
+
+body{
+    @include body(main-body);  
+}
+
+

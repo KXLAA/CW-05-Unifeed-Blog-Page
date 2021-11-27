@@ -1,0 +1,42 @@
+.hero{
+    @include flex-center-vert;
+    padding-bottom: 6.5rem;
+    justify-content: space-between;
+
+    @include respond-to(medium) {
+        flex-direction: column;
+        padding-bottom: 0rem;
+
+    }
+
+    &__heading{
+        @include heading(main-heading);
+    }
+
+    &__img-box{
+        width: 100%;
+        padding-right: 4.5rem; 
+
+        @include respond-to(medium) {
+            width: 100%;
+            padding-right: 0rem;
+            padding-bottom: 2rem; 
+        }
+       
+    }
+
+    &__txt-box{
+        width: 100%;
+        @include body(main-body);
+        
+    }
+
+    &__description{
+        padding-top: 1rem; 
+        padding-bottom: 2rem; 
+    }
+
+}
+
+
+

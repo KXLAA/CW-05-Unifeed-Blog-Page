@@ -1,0 +1,343 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* ===== Usage ===== */
+div {
+  background-image: url("cute-doggo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 2rem;
+  color: #656565;
+}
+
+.button__main {
+  color: #050505;
+  font-weight: 700;
+  background: #ee7c0e;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 0.3125rem;
+  padding: 1.125rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.button__main:hover {
+  background: #c7680c;
+  transform: translateX(0rem) translateY(-0.3125rem);
+}
+.button__main:active {
+  background: #763d07;
+  transform: translateX(0rem) translateY(0.125rem);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 48rem) {
+  .author {
+    padding-bottom: 3rem;
+  }
+}
+.author__img-container {
+  width: 3.875rem;
+}
+.author__img-container--s {
+  width: 3.875rem;
+}
+@media only screen and (max-width: 48rem) {
+  .author__img-container--s {
+    flex-direction: column;
+  }
+}
+.author__name {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1rem;
+  color: black;
+}
+.author__role {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 2rem;
+  color: #656565;
+}
+.author__img {
+  padding-right: 4.5rem;
+}
+.author__details-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.layout__container {
+  max-width: 71.25rem;
+  padding: 0rem 2.5rem 0rem 2.5rem;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 25em) {
+  .layout__container {
+    padding: 0rem 2rem 0rem 2rem;
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+@media only screen and (max-width: 34.625rem) {
+  .footer {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 25em) {
+  .footer__item {
+    margin-top: 0.5rem;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 4rem;
+  padding-top: 2.5rem;
+}
+.nav__main {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0rem;
+  margin: 0rem;
+}
+@media only screen and (max-width: 34.625rem) {
+  .nav__main {
+    background-color: rgba(255, 255, 255, 0.97);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+.nav__item {
+  margin-right: 1.5rem;
+}
+@media only screen and (max-width: 34.625rem) {
+  .nav__item {
+    margin-right: 0rem;
+    margin-bottom: 1.5rem;
+  }
+}
+.nav__mobile {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+@media only screen and (max-width: 34.625rem) {
+  .nav__mobile {
+    display: block;
+  }
+}
+.nav__mobile--icon {
+  height: 3rem;
+  width: 3rem;
+  color: black;
+}
+.nav__mobile--icon[name=close-circle-sharp] {
+  display: none;
+}
+
+.nav-open .nav__main {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+.nav-open .nav__mobile--icon[name=close-circle-sharp] {
+  display: block;
+}
+.nav-open .nav__mobile--icon[name=menu-sharp] {
+  display: none;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  padding-bottom: 6.5rem;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 48rem) {
+  .hero {
+    flex-direction: column;
+    padding-bottom: 0rem;
+  }
+}
+.hero__heading {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: black;
+  font-size: 2.25rem;
+  line-height: 2.875rem;
+}
+.hero__img-box {
+  width: 100%;
+  padding-right: 4.5rem;
+}
+@media only screen and (max-width: 48rem) {
+  .hero__img-box {
+    width: 100%;
+    padding-right: 0rem;
+    padding-bottom: 2rem;
+  }
+}
+.hero__txt-box {
+  width: 100%;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 2rem;
+  color: #656565;
+}
+.hero__description {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.article {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 6.5rem;
+}
+@media only screen and (max-width: 48rem) {
+  .article {
+    flex-direction: column;
+    padding-bottom: 0rem;
+  }
+}
+.article__container {
+  margin-right: 2rem;
+}
+@media only screen and (max-width: 48rem) {
+  .article__container {
+    margin-right: 0rem;
+  }
+}
+.article__container:last-child {
+  margin-right: 0rem;
+}
+.article__img {
+  margin-bottom: 1.5rem;
+}
+.article__heading {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: black;
+  font-size: 2.25rem;
+  line-height: 2.875rem;
+  margin-bottom: 1.5rem;
+}
+.article__description {
+  margin-bottom: 1.5rem;
+}/*# sourceMappingURL=main.css.map */

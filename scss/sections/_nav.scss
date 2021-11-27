@@ -1,0 +1,92 @@
+.nav{
+    @include flex-center-vert;
+    justify-content: space-between;
+    padding-bottom: 4rem;
+    padding-top: 2.5rem;
+
+    &__main{
+        @include flex-center-vert;
+        list-style: none;
+        padding: 0rem;
+        margin: 0rem;
+
+        @include respond-to(small) {
+            background-color: rgba(255, 255, 255, 0.97);
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height: 100vh;
+            display:flex;
+			align-items: center;
+			justify-content: center;
+            transition: all 0.5s ease-in;
+            flex-direction:column;
+            opacity: 0;
+			pointer-events: none;
+            visibility: hidden;
+        }
+    }
+
+    &__item{
+        margin-right: 1.5rem;
+
+        @include respond-to(small) {
+            margin-right: 0rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+
+    &__mobile{
+        border: none;
+	    background: none;
+	    cursor: pointer;
+        display: none;
+
+        @include respond-to(small) {
+            display: block;
+        }
+
+
+        &--icon{
+            height: 3rem;
+            width: 3rem;
+            color: $black;
+        }
+
+        &--icon[name="close-circle-sharp"]{
+            display: none;
+        }
+
+    }
+
+}
+
+.nav-open{
+    & .nav__main{
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+    }
+
+    & .nav__mobile--icon[name="close-circle-sharp"] {
+        display: block;
+    }
+
+    & .nav__mobile--icon[name="menu-sharp"] {
+        display: none;
+    }
+
+} 
+
+
+
+
+
+
+
+
+
+
+

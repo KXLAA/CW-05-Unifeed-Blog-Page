@@ -1,0 +1,114 @@
+/// BREAKPOINT MANAGER
+$breakpoints:  (
+  "x-small": 25em, // 400px
+  "small": 34.625rem, // 544px
+  "medium": 48rem, // 768px
+  "large": 60em, // 960px
+  "x-large": 80em, // 1280px
+  "xx-large": 90em // 1440px
+);
+ 
+@mixin respond-to($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    
+    // Write the media query.
+    @media only screen and (max-width: $breakpoint-value) {
+      @content;
+    }
+    // If the breakpoint doesn't exist in the map.
+  }
+
+  @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+// USE LIKE THIS
+// @include respond-to(x-small) { ... }
+// @include respond-to(medium) { ... }
+// @include respond-to(large) { ... }
+// @include respond-to(x-large) { ... }
+// @include respond-to(xx-large) { ... }
+
+
+
+
+/// VERTICAL CENTERING
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// USE LIKE THIS
+// @include vertical-center();
+
+
+
+//FLEXBOX
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+ 
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+ 
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+ 
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+//COVER BACKGROUND
+@mixin cover-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ===== Usage ===== */
+div {
+  background-image: url("cute-doggo.png");
+  @include cover-background;
+}
+
+
+//CONTAINER CENTER
+@mixin container-center{
+  max-width: $max-width;
+  padding: $padding;
+  margin: 0 auto;
+}
+
+// USE LIKE THIS
+// @include container-center
+
+
+
+
+
+
+
+

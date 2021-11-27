@@ -1,0 +1,41 @@
+.author{
+    @include flex-center-vert;
+
+    @include respond-to(medium) {
+        padding-bottom: 3rem;
+    }
+
+    &__img-container{
+        width: 3.875rem;
+    }
+
+    &__img-container--s{
+        width: 3.875rem;
+
+        @include respond-to(medium) {
+            flex-direction: column;
+        }
+     
+    }
+
+    &__name{
+        @include body(author__name--txt);
+    }
+
+    &__role{
+        @include body(author__role--txt);
+    }
+
+    &__img{
+        padding-right: 4.5rem;
+    }
+
+    &__details-container{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        margin-left: 1rem;
+    }
+
+}
